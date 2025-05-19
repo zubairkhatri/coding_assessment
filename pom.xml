@@ -7,7 +7,8 @@
     <packaging>pom</packaging>
     <description>Coding Assessment project</description>
     <modules>
-        <module>systemcontrol</module>
+        <module>sim-sc</module>
+        <module>gpio-sc</module>
     </modules>
     <version>0.0.1-SNAPSHOT</version>
 
