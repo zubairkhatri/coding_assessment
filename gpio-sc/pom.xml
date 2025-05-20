@@ -60,7 +60,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>collab.test.app.LightController</mainClass>
+                            <mainClass>collab.test.app.LightControl</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

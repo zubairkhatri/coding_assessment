@@ -1,6 +1,9 @@
 package collab.test.app;
 
-import java.time.LocalDate;
+import collab.test.app.pojo.AirConditioner;
+import collab.test.app.pojo.Fan;
+import collab.test.app.pojo.Light;
+
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.Scanner;
@@ -36,10 +39,10 @@ public class SystemControl {
     }
 
     public void lightControl() {
-        LightController controller = new LightController();
+        Light light = new Light();
         System.out.println("Turning ON the light...");
 
-        controller.setOn(true);
+        light.setOn(true);
 
         System.out.println("Light is ON right now....");
 
@@ -58,9 +61,9 @@ public class SystemControl {
             scan.close();
         }
 
-        controller.setOn(!n.equalsIgnoreCase("yes"));
+        light.setOn(!n.equalsIgnoreCase("yes"));
 
-        if(!controller.isOn()) {
+        if(!light.isOn()) {
             System.out.println("Lights OFF");
         } else {
             System.out.println("Lights ON");
@@ -76,9 +79,9 @@ public class SystemControl {
     }
 
     public void fanControl() {
-        FanController controller = new FanController();
+        Fan fan = new Fan();
         System.out.println("Turning the FAN ON...");
-        controller.setOn(true);
+        fan.setOn(true);
 
         System.out.println("FAN is ON right now....");
 
@@ -101,16 +104,16 @@ public class SystemControl {
         }
 
         if (n.equalsIgnoreCase("0")) {
-            controller.setOn(false);
+            fan.setOn(false);
         } else if (n.equalsIgnoreCase("1")) {
-            controller.setOn(true);
+            fan.setOn(true);
             System.out.println("FAN IS ON AND IT IS RUNNING AT SPEED 1");
         } else if(n.equalsIgnoreCase("2")) {
-            controller.setOn(true);
+            fan.setOn(true);
             System.out.println("FAN IS ON AND IT IS RUNNING AT SPEED 2");
         }
 
-        if(!controller.isOn()) {
+        if(!fan.isOn()) {
             System.out.println("FAN IS OFF");
         } else {
             System.out.println("FAN ON");
@@ -119,7 +122,7 @@ public class SystemControl {
     }
 
     public void airConditionerControl() {
-        AirConditionerController controller = new AirConditionerController();
+        AirConditioner controller = new AirConditioner();
         System.out.println("Turning ON the Air Conditioner...");
 
         controller.setOn(true);
@@ -156,9 +159,9 @@ public class SystemControl {
         boolean isJanuaryFirstOneAM = currentDateTime.getMonth() == Month.JANUARY && currentDateTime.getDayOfMonth() == 1 && currentDateTime.getHour() == 1 && currentDateTime.getMinute() == 0;
         if(isJanuaryFirstOneAM) {
             System.out.println("Shutting down all appliances");
-            new LightController().setOn(false);
-            new FanController().setOn(false);
-            new AirConditionerController().setOn(false);
+            new Light().setOn(false);
+            new Fan().setOn(false);
+            new AirConditioner().setOn(false);
         } else {
             System.out.println("TODAY IS NOT THE January 1st, 1 AM.");
         }

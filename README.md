@@ -21,5 +21,13 @@ The whole project is maven project, so main parent pom.xml is under coding_asses
 
 GPIO-SC Module
 ==========================
-1. This module requires native library which will be generated using C programming language, which will help create header file also
-2. 
+1. This module is actual JNI implementation, again it is simulation only, because it is not connected to the actual required hardwares.
+2. we have to create c program for each appliance control and corresponding header file from .java file for each.
+
+HOW TO BUILD HEADER, DLL files
+==================================
+1. After creating all the .java classes, stay on this directory to generate header file as follows
+   a. javac -h . LightController.java, this will generate header file with .h extension
+2. Generate .dll file on windows
+   a.  gcc -shared -fpic -o lightcontrol.dll -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/win32" -I"../" lightcontrol.c
+2. For the ease, we have moved all files such as C file, header file, and .dll file into src/java/native

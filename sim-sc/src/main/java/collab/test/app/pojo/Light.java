@@ -1,6 +1,7 @@
-package collab.test.app;
+package collab.test.app.pojo;
 
-public class LightController {
+public class Light
+{
     public boolean isOn() {
         return isOn;
     }

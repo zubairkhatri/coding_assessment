@@ -1,14 +1,14 @@
 #include <jni.h>
 #include <stdio.h>
-#include "LightControl.h"
+#include "AirConditionerControl.h"
 
 // Simulating control of a light (real implementation could use GPIO, etc.)
-JNIEXPORT void JNICALL Java_LightController_toggleLight
+JNIEXPORT void JNICALL Java_AirConditioner_toggleAirConditioner
   (JNIEnv *env, jobject obj, jboolean on) {
     if (on) {
-        printf("🔆 Light is now ON\n");
+        printf("🔆 AirConditioner is now ON\n");
         // You could place GPIO control code here for a real appliance.
     } else {
-        printf("💡 Light is now OFF\n");
+        printf("💡 AirConditioner is now OFF\n");
     }
 }

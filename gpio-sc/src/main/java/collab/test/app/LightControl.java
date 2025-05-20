@@ -1,17 +1,21 @@
 package collab.test.app;
 
-public class LightController {
+public class LightControl {
     // Load native library
-    static {
+/*    static {
         //System.loadLibrary("lightcontrol");
         System.load("C:\\JAVAPROJECTS\\coding_assessment\\gpio-sc\\src\\main\\native\\lightcontrol.dll");
+    }*/
+
+    static {
+        System.loadLibrary("lightcontrol"); // lightcontrol.dll on Windows
     }
 
     // Declare native method
     public native void toggleLight(boolean on);
 
     public static void main(String[] args) {
-        LightController controller = new LightController();
+        LightControl controller = new LightControl();
         System.out.println("Turning ON the light...");
         controller.toggleLight(true);
 

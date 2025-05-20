@@ -1,6 +1,6 @@
-package collab.test.app;
+package collab.test.app.pojo;
 
-public class FanController {
+public class Fan {
     int speed;
     boolean isOn;
 

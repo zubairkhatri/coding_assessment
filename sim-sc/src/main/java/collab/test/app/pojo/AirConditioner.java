@@ -1,6 +1,6 @@
-package collab.test.app;
+package collab.test.app.pojo;
 
-public class AirConditionerController {
+public class AirConditioner {
     public boolean isOn() {
         return isOn;
     }
