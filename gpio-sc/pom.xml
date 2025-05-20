@@ -41,6 +41,14 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>target/build</directory>
+                <includes>
+                    <include>*.dll</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <!-- Build an executable JAR -->
