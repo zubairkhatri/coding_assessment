@@ -27,7 +27,7 @@
         </dependency>-->
         <!-- END SNIPPET: maven-dependency-snippet -->
 
-        <dependency>
+<!--        <dependency>
             <groupId>com.pi4j</groupId>
             <artifactId>pi4j-core</artifactId>
             <version>1.4</version>
@@ -37,7 +37,7 @@
             <artifactId>pi4j-native</artifactId>
             <version>1.4</version>
             <type>pom</type>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
@@ -52,7 +52,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>collab.test.app.GPIOSystemControl</mainClass>
+                            <mainClass>collab.test.app.LightController</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
